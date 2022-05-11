@@ -250,7 +250,7 @@ BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
-*/
+
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -290,3 +290,31 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 // [5, 2, 3]
 // [1, 5, 3, 9, 6, 1]
+*/
+
+//////////////////////////////////////////
+// Immediatiately Invoked Function Expressions
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+
+runOnce();
+
+// IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate);
+
+(() => console.log('This will ALSO never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 23;
+}
+
+// console.log(isPrivate);
+console.log(notPrivate);
